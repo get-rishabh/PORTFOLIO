@@ -1,6 +1,6 @@
 import { PerspectiveCamera, Ring } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import Hackerroom from "../components/hackerroom";
+import Hackerroom from '../components/Hackerroom';
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
 import {Leva, useControls } from "leva";
