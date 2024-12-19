@@ -78,6 +78,18 @@ body {
   }
 
   /* projects section  */
+  .project-container {
+    @apply w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-4;
+  }
+
+  .project-desc {
+    @apply font-generalsans text-neutral-800 dark:text-[#afb0b6] text-base  font-normal mb-8;
+  }
+
+  .project-link {
+    @apply text-white text-base font-generalsans pb-4;
+  }
+
   .arrow-btn {
     @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
   }
@@ -138,7 +150,7 @@ body {
   }
 
   .field-btn {
-    @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
+    @apply bg-black-500 px-7 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
   }
 
   .field-btn_arrow {

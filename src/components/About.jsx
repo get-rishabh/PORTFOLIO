@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import Globe from 'react-globe.gl';
-
 import Button from '../components/Button.jsx';
+import { Github_Globe } from './Github_Globe.jsx';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(' adrian@jsmastery.pro');
+    navigator.clipboard.writeText('rishabh208020@gmail.com');
     setHasCopied(true);
 
     setTimeout(() => {
@@ -47,17 +46,7 @@ const About = () => {
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <Globe
-                height={326}
-                width={326}
-                backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
-              />
+              <Github_Globe />
             </div>
             <div>
               <p className="grid-headtext">I&apos;m very flexible with time zone communications & locations</p>
@@ -73,9 +62,23 @@ const About = () => {
 
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
-              <p className="grid-subtext">
+              <p className="grid-subtext mb-3">
                 I love solving problems and building things through code. Programming isn&apos;t just my profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
               </p>
+              <p className="grid-subtext mb-3 ">
+                Here, are some of my Coding Profiles :
+              </p>
+              <div className="grid-subtext flex gap-2">
+              <a className=" text-white" href='https://leetcode.com/u/CALLME_COLONEL/'>
+                LeetCode
+              </a> |
+              <a className=" text-white" href='https://www.codechef.com/users/colonel_here'>
+                Codechef
+              </a> |
+              <a className=" text-white" href='https://www.hackerrank.com/profile/AIML1B_RV_30351'>
+                Hackerrank
+              </a> 
+              </div>
             </div>
           </div>
         </div>
@@ -89,7 +92,7 @@ const About = () => {
             />
 
             <div className="space-y-2">
-              <p className="grid-subtext text-center">Contact me</p>
+              <a href="#contact" className="grid-subtext text-center">Contact me</a>
               <div className="copy-container" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">rishabh208020@gmail.com</p>
