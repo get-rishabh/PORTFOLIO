@@ -28,5 +28,5 @@ const Hackerroom = (props) =>  {
     </group>
   );
 }
-export default HackerRoom;
+export default Hackerroom;
 useGLTF.preload('/models/hacker-room.glb');
