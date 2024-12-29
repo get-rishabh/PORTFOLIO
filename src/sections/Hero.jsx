@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import Hackerroom from '../components/Hackerroom';
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
-import {Leva, useControls } from "leva";
+// import {Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import Target from "../components/Target";
 import ReactLogo from "../components/ReactLogo";
@@ -13,19 +13,19 @@ import HeroCamera from "../components/HeroCamera";
 import Button from "../components/Button";
 
 const Hero = () => {
-  // const x = useControls("Rings", {
+  // const x = useControls("Cube", {
   //   positionX: {
-  //     value: 2.5,
+  //     value: 3.4,
   //     min: -10,
   //     max: 10,
   //   },
   //   positionY: {
-  //     value: 2.5,
+  //     value: -4.5,
   //     min: -10,
   //     max: 10,
   //   },
   //   positionZ: {
-  //     value: 2.5,
+  //     value: 3.6,
   //     min: -10,
   //     max: 10,
   //   },
@@ -59,10 +59,10 @@ const Hero = () => {
     return {
       deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
       deskPosition: isMobile ? [0.5, -4.5, 0] : [0.15, -5.5, 0],
-      cubePosition: isSmall ? [4, -5, 0] : isMobile ? [5, -5, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
+      cubePosition: isSmall ? [3.4, -4.5, 3.6] : isMobile ? [5, -5, 3.5] : isTablet ? [5, -5, 0] : [9, -5.5, 3.5],
       reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
       ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
-      targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -5, -10] : [-13, -9, -10],
+      targetPosition: isSmall ? [-2.7, -5, 3.6] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -5, -10] : [-13, -9, -10],
     };
   };
 
@@ -81,9 +81,9 @@ const Hero = () => {
       </div>
 
       <div className="w-full h-full absolute inset-0">
+        {/* <Leva /> */}
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
-            {/* <Leva hidden /> */}
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
             <HeroCamera isMobile = {isMobile}>
               <Hackerroom
@@ -94,11 +94,11 @@ const Hero = () => {
             </HeroCamera>
 
             <group>
-              <Target position={sizes.targetPosition} />
+              <Target position={sizes.targetPosition} scale = {isMobile ? 0.7 : 1.5} />
               <ReactLogo position={sizes.reactLogoPosition} isMobile = {isMobile} />
               <Cube position={sizes.cubePosition} />
               <Rings position={sizes.ringPosition} />
-              {/* <Rings position={[x.positionX, x.positionY, x.positionZ]} /> */}
+              {/* <Cube position={[x.positionX, x.positionY, x.positionZ]} /> */}
             </group>
 
             <ambientLight intensity={1} />

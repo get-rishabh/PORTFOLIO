@@ -19,7 +19,7 @@ const Cube = ({ ...props }) => {
     gsap
       .timeline({
         repeat: -1,
-        repeatDelay: 0.5,
+        repeatDelay: 0.3,
       })
       .to(cubeRef.current.rotation, {
         y: hovered ? '+=2' : `+=${Math.PI * 2}`,
@@ -33,7 +33,7 @@ const Cube = ({ ...props }) => {
 
   return (
     <Float floatIntensity={2}>
-      <group position={[9, -4, 0]} rotation={[2.6, 0.8, -1.8]} scale={0.74} dispose={null} {...props}>
+      <group position={[9, -4, 0]} rotation={[2.6, 0.8, -1.8]} scale={0.5} dispose={null} {...props}>
         <mesh
           ref={cubeRef}
           castShadow
